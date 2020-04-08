@@ -1,12 +1,13 @@
-import React from "react";
-import '../index.css';
+import React  from "react";
+import Modal from './modal';
 import { Link, NavLink } from "react-router-dom";
+import '../index.css';
 
 const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <Link className="navbar-brand" to="/">
-                Wild <code><i>veggy</i></code>
+                Shop <code><i>groceries</i></code>
             </Link>
             <button
                 className="navbar-toggler"
@@ -21,9 +22,9 @@ const Navbar = () => {
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="navbar-nav">
-                    <NavLink className="nav-item nav-link" to="/cart">
-                        <i className="fas fa-shopping-cart" />
-                    </NavLink>
+                    <div className="nav-item nav-link">
+                        <Modal />
+                    </div>
                 </div>
             </div>
         </nav>
