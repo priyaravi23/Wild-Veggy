@@ -3,7 +3,7 @@ import Modal from './modal';
 import { Link, NavLink } from "react-router-dom";
 import '../index.css';
 
-const Navbar = () => {
+const Navbar = ({selectedItem}) => {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <Link className="navbar-brand" to="/">
@@ -23,7 +23,7 @@ const Navbar = () => {
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="navbar-nav">
                     <div className="nav-item nav-link">
-                        <Modal />
+                        <Modal selectedItem={selectedItem} />
                     </div>
                 </div>
             </div>

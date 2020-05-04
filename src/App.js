@@ -8,11 +8,11 @@ import { data } from './components/mockData';
 function App() {
     const [items, setItems] = useState(data);
     const [filteredItems, setFilteredItems] = useState(data);
-    const [selectedItem, setSelectedItem] = useState();
+    const [selectedItem, setSelectedItem] = useState(null);
 
     return (
         <React.Fragment>
-            <NavBar />
+            <NavBar selectedItem={selectedItem} />
             <main className="container">
                 <Switch>
                     <Route exact path="/">
@@ -20,10 +20,8 @@ function App() {
                                     filteredItems={filteredItems}
                                     setFilteredItems={setFilteredItems}
                                     setSelectedItem={setSelectedItem} />
-                    </Route>
 
-                    <Route path="/modal">
-                        <Modal selectedItem={selectedItem} />
+                        {/*{selectedItem ?  (<Modal selectedItem={selectedItem} /> ): null}*/}
                     </Route>
                 </Switch>
             </main>
