@@ -174,7 +174,7 @@ export const data = [
     },
     {
         id: '64129c2a-1b10-408b-8679-4e754704344b',
-        name: "Musk Melon - Each",
+        name: "Muskmelon - Each",
         price: 3.9,
         image: `${MuskMelon}`,
         category: "fruits"
@@ -195,8 +195,8 @@ export const data = [
     },
     {
         id: '1be60c14-1fa0-4de5-b45f-7c59d7793275',
-        name: "Pomegranate - 7 oz",
-        price: 5.9,
+        name: "Pomegranate - 1",
+        price: 3.9,
         image: `${Pomegranate}`,
         category: "fruits"
     },
@@ -216,7 +216,7 @@ export const data = [
     },
     {
         id: '653e41ef-631a-433e-84b1-0052c68d99a6',
-        name: "Water Melon - 20 oz",
+        name: "Watermelon - Each",
         price: 4.9,
         image: `${WaterMelon}`,
         category: "fruits"

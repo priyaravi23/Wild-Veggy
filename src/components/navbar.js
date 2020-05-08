@@ -1,13 +1,13 @@
 import React  from "react";
 import Modal from './modal';
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import '../index.css';
 
 const Navbar = ({selectedItem}) => {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <Link className="navbar-brand" to="/">
-                Shop <code><i>groceries</i></code>
+                Specialty <code><i>Market</i></code>
             </Link>
             <button
                 className="navbar-toggler"

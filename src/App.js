@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 import NavBar from "./components/navbar";
 import BrowseItem from './components/browseItem';
-import Modal from './components/modal';
 import { data } from './components/mockData';
 
 function App() {
     const [items, setItems] = useState(data);
     const [filteredItems, setFilteredItems] = useState(data);
-    const [selectedItem, setSelectedItem] = useState(null);
+    const [selectedItem, setSelectedItem] = useState([]);
 
     return (
         <React.Fragment>
@@ -19,9 +18,8 @@ function App() {
                         <BrowseItem items={items}
                                     filteredItems={filteredItems}
                                     setFilteredItems={setFilteredItems}
+                                    selectedItem={selectedItem}
                                     setSelectedItem={setSelectedItem} />
-
-                        {/*{selectedItem ?  (<Modal selectedItem={selectedItem} /> ): null}*/}
                     </Route>
                 </Switch>
             </main>

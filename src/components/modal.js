@@ -4,17 +4,25 @@ import EmptyCart from './emptyCart';
 import '../index.css';
 
 const Modal = ({selectedItem}) => {
-    const name = selectedItem && selectedItem.name;
-    const price = selectedItem && selectedItem.price;
     const [Total, setTotal] = useState(null);
+    const [addTotal, setAddTotal] = useState([]);
 
-    console.log(name, price);
+    const add = (items) => {
+        const res = [...items];
+
+        res.map(item => {
+            item.total = item.price;
+        });
+
+        setAddTotal(res);
+    };
 
     useEffect(() => {
-        if (Total === null && price) {
-            setTotal(price);
+        if (selectedItem && addTotal && selectedItem.length > 0 && selectedItem.length !== addTotal.length) {
+            setAddTotal(selectedItem);
+            add(selectedItem)
         }
-    }, []);
+    });
 
     return (
         <div>
@@ -34,7 +42,7 @@ const Modal = ({selectedItem}) => {
                             </button>
                         </div>
                         <div className="modal-body">
-                            {selectedItem ?
+                            {selectedItem && selectedItem.length !== 0 ?
                                 <table className="table table-striped">
                                     <thead>
                                     <tr>
@@ -45,14 +53,19 @@ const Modal = ({selectedItem}) => {
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>{name}</td>
-                                        <td>{price}</td>
-                                        <td><Counter setTotal={setTotal}
-                                                    price={price}/>
-                                        </td>
-                                        <td>{Total}</td>
-                                    </tr>
+                                        {selectedItem.map((item, i) => (
+                                            <tr key={item.id}>
+                                                <td>{item.name}</td>
+                                                <td>{item.price}</td>
+                                                <td><Counter setTotal={setTotal}
+                                                             price={item.price}
+                                                             addTotal={addTotal}
+                                                             setAddTotal={setAddTotal}
+                                                            id={i}/>
+                                                </td>
+                                                <td>{item.total}</td>
+                                            </tr>
+                                        ))}
                                     </tbody>
                                 </table> : <EmptyCart />
                             }

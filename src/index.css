@@ -18,18 +18,16 @@ code {
   padding: 0 20px;
   width: 100%;
   display: grid;
-  /* Define Auto Row size */
-  grid-auto-rows: 400px;
-  /*Define our columns */
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   grid-gap: 1em;
+    grid-template-columns: repeat(auto-fill, 200px);
+    grid-template-rows: repeat(auto-fill, 330px);
 }
 
 .grid-item {
   padding: 20px;
   border-radius: 10px;
-  width: 240px;
-  height: 350px;
+  width: 200px;
+  height: 310px;
 }
 
 .fas {
@@ -86,25 +84,6 @@ code {
   border: none;
 }
 
-.button {
-  font-size: .9rem;
-  font-weight: 500;
-  border: none;
-  border-radius: 3px;
-  margin-left: .5rem;
-  opacity: 0;
-  transition: opacity .35s ease;
-}
-
-.button a {
-  width: 300px;
-  padding: 12px 48px;
-  text-align: center;
-  color: white;
-  border: solid 2px white;
-  z-index: 1;
-}
-
 .grid-item:hover .button {
   opacity: 1;
 }
@@ -112,4 +91,17 @@ code {
 .button-default {
   background: #247BA0;
   color: #fff;
+}
+
+.button {
+    font-size: 12px !important;
+    width: 130px !important;
+}
+
+.item-name {
+    font-size: small;
+}
+
+.item-price {
+    font-size: small;
 }
